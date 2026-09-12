@@ -1,0 +1,85 @@
+\documentclass[11pt,spanish]{article}
+
+\input{preamble.tex}
+\input{author.tex}
+
+\headheight=14pt
+\linespread{1.3}
+\author{\namestudent}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\namestudent \\ \rolusm}
+\fancyfoot[L]{Campus \campus}
+\fancyfoot[C]{\thepage}
+\rhead{\sem}
+\lhead{INF-221}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newbool{programs}
+\boolfalse{programs}
+\chead{REPORTE TAREA \tnum~}
+
+\title{
+  \huge
+  \textbf{REPORTE TAREA \tnum~ \\ ALGORITMOS Y COMPLEJIDAD} \\[1ex]
+  \emph{\textquote{Más allá de la notación asintótica: Análisis experimental de algoritmos de ordenamiento y multiplicación de matrices.}}
+}
+
+\date{
+  \small
+  \today\\
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\vspace{-1.0\baselineskip}
+
+% Resumen / Abstract
+\input{sections/abstract}
+
+% Índice general de contenidos
+\tableofcontents
+\newpage
+
+\section{Introducción}
+\input{sections/introduccion}
+
+\section{Entorno experimental}
+\input{sections/experiment_intro}
+
+\section{Resultados y Análisis}
+\input{sections/experiment_results}
+
+\section{Conclusiones}
+\input{sections/conclusions}
+
+\section{Implementaciones}
+\input{sections/implementations}
+
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{taocv3}
+Donald E. Knuth.
+\newblock \emph{The Art of Computer Programming, Volume 3: Sorting and Searching}.
+\newblock Addison Wesley Longman Publishing Co., Inc., 2da edición, 1998.
+
+\bibitem{algorithms_erickson}
+Jeff Erickson.
+\newblock \emph{Algorithms}.
+\newblock 2019. ISBN: 978-1-792-64483-2.
+
+\bibitem{geeksforgeeks}
+GeeksforGeeks.
+\newblock \emph{Sorting Algorithms and Matrix Multiplication Implementations}.
+\newblock \url{https://www.geeksforgeeks.org/}, 2026.
+
+\bibitem{cormen2009introduction}
+Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest y Clifford Stein.
+\newblock \emph{Introduction to Algorithms}.
+\newblock The MIT Press, 3ra edición, 2009.
+\end{thebibliography}
+
+\end{document}

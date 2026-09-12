@@ -1,0 +1,8 @@
+Las pruebas experimentales se ejecutaron en un entorno controlado bajo el sistema operativo macOS (arquitectura ARM64 / Apple Silicon). La compilación de los módulos en C++ se realizó utilizando el compilador nativo \texttt{clang++} (Apple LLVM versión 15+) bajo el estándar \texttt{C++17} y la bandera de optimización \texttt{-O2}.
+
+El protocolo de medición experimental se estructuró de la siguiente forma:
+\begin{itemize}
+    \item \textbf{Medición Temporal:} Se utilizó el reloj monotónico de alta resolución \texttt{std::chrono::high\_resolution\_clock} provisto por la biblioteca estándar de C++, cronometrando de manera estricta el tiempo de cómputo del algoritmo y aislando por completo las operaciones de entrada/salida (lectura y escritura en disco).
+    \item \textbf{Medición Espacial:} El consumo de memoria máxima residente (RAM) se obtuvo mediante la llamada del sistema \texttt{getrusage(RUSAGE\_SELF, ...)}, normalizando el campo \texttt{ru\_maxrss} a kilobytes (KB).
+    \item \textbf{Muestreo Estadístico:} Con el fin de mitigar la varianza inducida por procesos concurrentes del sistema operativo, cada configuración experimental se ejecutó sobre tres muestras independientes ($M = \{a, b, c\}$), computando la media aritmética en los análisis posteriores.
+\end{itemize}

@@ -1,0 +1,11 @@
+El análisis teórico de algoritmos se fundamenta en la caracterización asintótica del costo temporal y espacial mediante las notaciones $\mathcal{O}$, $\Omega$ y $\Theta$ . Estas cotas permiten clasificar funciones según su tasa de crecimiento cuando el tamaño de la entrada $n$ tiende a infinito, abstrayendo deliberadamente factores constantes multiplicativos y términos de orden inferior.
+
+Si bien este modelo proporciona garantías formales independientes de la plataforma de cómputo, en entornos de ejecución reales —gobernados por el modelo abstracto \textit{word-RAM} y arquitecturas físicas contemporáneas— factores como la jerarquía de memoria caché (niveles L1, L2 y L3), la predicción de saltos a nivel de procesador, las asignaciones dinámicas en memoria secundaria y el costo del marco de llamadas recursivas inciden drásticamente en el rendimiento observable. Como consecuencia directa, un algoritmo con una cota asintótica superior puede resultar significativamente más lento que uno de mayor orden de complejidad para rangos prácticos del problema si sus constantes ocultas o su dispersión espacial en memoria son elevadas .
+
+El presente reporte tiene como objetivo confrontar el comportamiento teórico con el desempeño experimental de dos problemas fundamentales:
+\begin{enumerate}
+    \item \textbf{Ordenamiento de arreglos unidimensionales de enteros:} Estudio comparativo de MergeSort , QuickSort con pivote aleatorio y partición de Hoare , PatienceSort y el algoritmo introspectivo \texttt{std::sort} .
+    \item \textbf{Multiplicación de matrices cuadradas de enteros:} Comparación entre el enfoque tradicional iterativo Naive ($\Theta(n^3)$)  y el método Divide y Vencerás de Strassen ($\mathcal{O}(n^{\log_2 7}) \approx \mathcal{O}(n^{2.81})$) .
+\end{enumerate}
+
+A través de mediciones empíricas de tiempo de CPU de alta resolución y consumo de memoria máxima residente (RAM), se analiza la incidencia de la estructura previa de los datos, el dominio numérico y el tamaño de la instancia, determinando los límites prácticos y la validez experimental de las cotas asintóticas.
